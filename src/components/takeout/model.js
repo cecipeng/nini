@@ -24,6 +24,17 @@ durex.model({
       this.setField({
         userOrders: Array.isArray(arr) ? arr : []
       })
+    },
+    updateProductList(newProductList) {
+      takeout.post('/product/update', {
+        data: newProductList
+      }).then(res => {
+        console.log(res);
+        
+        this.setField({
+          productList: res || []
+        })
+      })
     }
   }
 })

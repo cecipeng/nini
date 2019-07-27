@@ -28,18 +28,18 @@ let productList = [
     },
     {
       answersId: 2,
-      userId: '张三三',
+      userId: '张三三2',
       time: '2017-07-21 10:30',
       good: 5,
       bad: 6,
       answers: '这里是回答回答回答这里是回答回答回答1-2'
     },
     {
-      answersId: 2,
-      userId: '张三三',
+      answersId: 3,
+      userId: '张三三3',
       time: '2017-07-22 10:30',
-      good: 2,
-      bad: 0,
+      good: 5,
+      bad: 6,
       answers: '这里是回答回答回答这里是回答回答回答1-3'
     }]
   },
@@ -53,7 +53,7 @@ let productList = [
       answersId: 1,
       userId: '张三',
       time: '2017-07-23 10:30',
-      good: '999+',
+      good: '1024',
       bad: 2,
       answers: '这里是回答回答回答这里是回答回答回答2-1'
     },
@@ -61,7 +61,7 @@ let productList = [
       answersId: 2,
       userId: '张三三',
       time: '2017-07-24 10:30',
-      good: 99,
+      good: 998,
       bad: 25,
       answers: '这里是回答回答回答这里是回答回答回答2-2'
     }]
@@ -125,6 +125,9 @@ Mock.mock('/product/list', 'post', (res, req) => {
   }
   productList.push(order)
   return userOrder
+})
+Mock.mock('/product/update', 'post', (res, req) => {
+  return JSON.parse(res.body)
 })
 
 
